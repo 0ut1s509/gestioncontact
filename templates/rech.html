@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<br><br><br>
+<div>
+    <form action="/search/" method="post">
+        {% csrf_token %}
+        <label for="fullname" class="control-label">Name</label>
+        <input type="text" name="fullname" value="" id="name" required>        
+        <button type="submit" class="btn btn-success">search</button>
+    </form>
+</div>
+{% endblock %}

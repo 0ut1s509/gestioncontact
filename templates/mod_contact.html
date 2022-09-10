@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<br><br><br>
+<center>
+<form method="post" action="">
+    {% csrf_token %}
+
+    <div class="">
+      <label for="fullname" class="control-label">Fullname</label>
+      <input type="text" name="fullname" value="{{contact.fullname}}" id="fullname">
+    </div>
+
+    <br>
+
+    <div class="">
+      <label for="phone_number" class="control-label">Phone Number</label>
+      <input type="text" name="phone" value="{{contact.phone_number}}" id="jounalis">
+    </div>
+
+    <br>
+
+    <div class="">
+      <label for="email" class="control-label">Email</label>
+      <input type="text" name="email" value="{{contact.email}}" id="Email">
+    </div>
+
+    <br>
+
+    <div class="">
+        <label for="adress" class="control-label">Adress</label>
+        <input type="text" name="adress" value="{{contact.adress}}" id="adress">
+      </div>
+
+      <br>
+
+      <div class="">
+        <label for="website" class="control-label">Website</label>
+        <input type="text" name="website" value="{{contact.website}}" id="website">
+      </div>
+
+      <br>
+
+      <div class="">
+        <label for="occupation" class="control-label">Occupation</label>
+        <input type="text" name="occupation" value="{{contact.occupation}}" id="occupation">
+      </div>
+
+      <br>
+
+      <div class="">
+        <label for="company" class="control-label">Company</label>
+        <input type="text" name="company" value="{{contact.company}}" id="company">
+      </div>
+
+      <br>
+
+    <button type="submit" class="btn btn-success">Save</button>
+
+  </form>
+</center>
+
+{% endblock %}

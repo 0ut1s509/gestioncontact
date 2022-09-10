@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<center>
+
+{% if contact %}
+    <div>
+        <br><br>
+        <h1>fullname : {{contact.fullname|title}}</h1>
+        <p>Phone Number : {{contact.phone_number}}</p>
+        <p>Email : {{contact.email}}</p>
+        <p>Adress : {{contact.adress}}</p>
+        <p>Website : {{contact.website}}</p>
+        {% if contact.occupation %}
+        <p>Occupation : {{contact.occupation}}</p>
+        {% endif %}
+        {% if contact.company %}
+        <p>Company : {{contact.company}}</p>
+        {% endif %}
+
+    </div>
+{% endif %}
+</center>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+        <br><br>
+        <center><h1>CONTACT LIST</h1></center>
+    {% for contact in Lcontact %}
+    <center>
+        <div>
+            <br>
+            <h3>fullname : {{contact.fullname|title}}</h3>
+            <p>Phone Number : {{contact.phone_number}}</p>
+            <p>Email : {{contact.email}}</p>
+            <p>Adress : {{contact.adress}}</p>
+            <p>Website : {{contact.website}}</p>
+            {% if contact.occupation %}
+            <p>Occupation : {{contact.occupation}}</p>
+            {% endif %}
+            {% if contact.company %}
+            <p>Company : {{contact.company}}</p>
+            {% endif %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success" name="bouton" value="{{contact.fullname}}">delete</button>
+            <button type="submit" class="btn btn-success" name="modify" value="{{contact.fullname}}">modify</button>
+
+        </form>
+
+        </div>
+    <center>
+    {% endfor %}
+    <br><br><br>
+
+{% endblock %}
