@@ -93,11 +93,18 @@ def list_contact(request):
     return render(request, 'list_contact.html', context)
 
 def search(request):
+    context={}
     if request.method == 'POST':
         value=request.POST.get('fullname')
-        print(value)
-        return redirect(search_contact, non=value)
-    return render(request, "rech.html")
+        if Contact.objects.filter(fullname=value):
+            return redirect(search_contact, non=value)
+        else:
+            unexist=1
+
+            context={
+                'unexist':unexist
+                }
+    return render(request, "rech.html", context)
 
 
 
